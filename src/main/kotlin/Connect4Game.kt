@@ -303,7 +303,12 @@ class Connect4Game(private val HUMAN_PLAYER: Int = 1,
                     continue
                 }
                 validInput = true
-                if (playAgain == "n") playing = false
+                if (playAgain == "n") {
+                    playing = false
+                    break
+                }
+                board = Array(5) { Array<Int>(7) { 0 } }
+                currentPlayer = 1
             }
             println("----------------------------")
         }
